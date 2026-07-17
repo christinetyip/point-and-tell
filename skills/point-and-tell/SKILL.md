@@ -1,6 +1,6 @@
 ---
 name: point-and-tell
-description: Add a dev-only, in-app "point at what's wrong" feedback mode to a visual or spatial app — the user taps the broken element, the app captures its identity, geometry, and live view state as a JSON ping, and the agent reads pings back to fix bugs without reproduction guesswork. Use when the user is building something interactive with visual/spatial feedback (a game, editor, map, dashboard, AR/VR scene) and wants a feedback mode, playtest feedback tool, or in-app bug reporting, or says "point and tell".
+description: Add a dev-only, in-app "point at what's wrong" feedback mode to a visual or spatial app. The user taps the broken element, the app captures its identity, geometry, and live view state as a JSON ping, and the agent reads pings back to fix bugs without reproduction guesswork. Use when the user is building something interactive with visual/spatial feedback (a game, editor, map, dashboard, AR/VR scene) and wants a feedback mode, playtest feedback tool, or in-app bug reporting, or says "point and tell".
 metadata:
   author: christinetyip
   version: "1.0.0"
