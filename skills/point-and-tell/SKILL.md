@@ -6,7 +6,7 @@ metadata:
   version: "1.0.0"
 ---
 
-# Point-and-Tell — build spec
+# Point-and-Tell
 
 You are adding a **dev-only, in-app feedback mode** to this project: the user
 taps any UI element or world object that looks wrong, optionally adds a note,
@@ -36,9 +36,8 @@ this spec cannot make them for you:
 
 **v0 in an hour:** registry + toggle + picker + chips, with accepted pings
 simply printed as JSON console lines — no store; you read the app's logs.
-That is a complete working loop for a solo dev (it's how the reference
-project started). Add the sanitizer and session store when pings need to
-outlive the console or testers go beyond the dev's own machine.
+That is a complete working loop. Add the sanitizer and session store when
+pings need to outlive the console or testers go beyond the dev's own machine.
 
 ## 1. Components
 

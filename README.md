@@ -76,9 +76,9 @@ losslessly.
 
 [`skills/point-and-tell/SKILL.md`](skills/point-and-tell/SKILL.md) is the full
 build spec your agent follows: the five components, the ping contract, the
-questions the agent should ask you first, the triage ritual, and the traps
-already hit for you. Prefer to use it without installing? Hand your agent that
-file and say *"build this into my app."*
+questions the agent should ask you first, and the triage ritual. Prefer to
+use it without installing? Hand your agent that file and say *"build this
+into my app."*
 
 ## License
 
