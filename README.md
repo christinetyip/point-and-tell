@@ -1,6 +1,6 @@
 # Point-and-Tell
 
-*A Spatial Feedback Layer for Coding Agents — as an installable agent skill*
+*A Spatial Feedback Layer for Coding Agents - an installable agent skill*
 
 **Point at what's wrong. Tell what to change. Let your agent fix it.**
 
@@ -30,7 +30,7 @@ archaeology.
 
 ## The fix: don't describe. Point.
 
-Build a feedback mode into the app itself, from the start of the project. Tap
+Build a lightweight feedback mode into the app itself, from the start of the project. Tap
 the thing that's wrong, tell what to change (a preset chip or a short note), and
 the app captures everything the agent needs at that exact moment — one tap, one
 **ping**, one JSON document:
@@ -63,7 +63,7 @@ One field cut the search space in half before the agent opened a single file.
    live view state, and app context are captured automatically along with your
    comment. Repeat for everything you spot.
 2. **Tell your agent.** Back in the chat window, one sentence: *"I left
-   point-and-tell pings."* That's the whole handoff.
+   point-and-tell pings."* 
 3. **The agent fixes.** It pulls the pings, triages each one into a tracked
    issue, and quotes the captured state as evidence in the fix.
 
