@@ -6,14 +6,30 @@
 
 ## Install
 
+Run the command for your agent in your project directory. Add `-g` to install
+machine-wide (all your projects) instead.
+
+**Claude Code:**
+
 ```bash
-npx skills add https://github.com/christinetyip/point-and-tell --skill point-and-tell
+npx skills add https://github.com/christinetyip/point-and-tell --skill point-and-tell -a claude-code -y
 ```
 
-Works with Claude Code, Cursor, Codex, and [every agent the skills CLI
-supports](https://github.com/vercel-labs/skills). Once installed, your agent
-applies the pattern when you're building something interactive and ask for a
-feedback mode.
+**Codex:**
+
+```bash
+npx skills add https://github.com/christinetyip/point-and-tell --skill point-and-tell -a codex -y
+```
+
+**Any/most coding agents** (Cursor, Cline, Amp, Windsurf, …) — installs to
+every agent the CLI detects:
+
+```bash
+npx skills add https://github.com/christinetyip/point-and-tell --skill point-and-tell -a '*' -y
+```
+
+Once installed, your agent applies the pattern when you're building something
+interactive and ask for a feedback mode.
 
 ## The problem
 
