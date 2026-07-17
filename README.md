@@ -6,19 +6,19 @@
 
 ## Install
 
-Run the command for your agent in your project directory. Add `-g` to install
-machine-wide (all your projects) instead.
+Run the command for your agent. The `-g` installs machine-wide (all your
+projects); drop it to install into the current project only.
 
 **Claude Code:**
 
 ```bash
-npx skills add https://github.com/christinetyip/point-and-tell --skill point-and-tell -a claude-code -y
+npx skills add https://github.com/christinetyip/point-and-tell --skill point-and-tell -a claude-code -g -y
 ```
 
 **Codex:**
 
 ```bash
-npx skills add https://github.com/christinetyip/point-and-tell --skill point-and-tell -a codex -y
+npx skills add https://github.com/christinetyip/point-and-tell --skill point-and-tell -a codex -g -y
 ```
 
 **Any/most coding agents** (Cursor, Cline, Amp, Windsurf, …):
