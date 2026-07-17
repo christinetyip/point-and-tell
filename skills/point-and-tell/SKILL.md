@@ -179,10 +179,13 @@ this loop — add it to CLAUDE.md / AGENTS.md / equivalent:
    file each ping into the issue tracker before other work, add the ledger row
    in the same commit. Many pings on the same affordance in the same build
    triage as ONE issue with a count, not N issues.
-2. **Never fix silently.** Every ping becomes a tracked issue, a ruling, or an
+2. **Read back on demand.** When the user says they've left pings or feedback
+   ("I left point-and-tell pings"), run the read-back script and triage
+   immediately — don't wait for the next session start.
+3. **Never fix silently.** Every ping becomes a tracked issue, a ruling, or an
    explicit "superseded by X" ledger entry, so the tester can always find out
    what happened to their report.
-3. **Quote the ping's data in the fix.** `vmState` and `rect` are evidence —
+4. **Quote the ping's data in the fix.** `vmState` and `rect` are evidence —
    use them to prove the diagnosis, not re-derive it.
 
 ## 4. Acceptance
@@ -198,6 +201,10 @@ this loop — add it to CLAUDE.md / AGENTS.md / equivalent:
 - [ ] Sanitizer caps + rate limit enforced; accepted pings echoed to console
       as JSON lines.
 - [ ] Read-back script exists and you have successfully run it.
-- [ ] Triage ritual + ledger file added to the project's agent instructions.
+- [ ] Triage ritual + ledger file added to the project's agent instructions,
+      including the on-demand trigger ("user says they left pings" → read back
+      now).
+- [ ] User has been told the loop: point & tell in the app → say "I left
+      pings" in chat → agent triages and fixes.
 - [ ] Sanitizer and picker-resolution logic are platform-free and unit-tested
       headlessly.

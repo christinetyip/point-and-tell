@@ -56,6 +56,15 @@ Scale." The ping's state showed `sheet: "Scale", toolScaleSelected: true` — th
 view-model was provably *correct*, so the bug had to be in the render layer.
 One field cut the search space in half before the agent opened a single file.
 
+## The loop
+
+1. **Point & tell in the app.** Toggle feedback mode on, tap the thing that's
+   wrong, pick a chip or type a short note. Repeat for everything you spot.
+2. **Tell your agent.** Back in the chat window, one sentence: *"I left
+   point-and-tell pings."* That's the whole handoff.
+3. **The agent fixes.** It pulls the pings, triages each one into a tracked
+   issue, and quotes the captured state as evidence in the fix.
+
 ## Where it comes from
 
 The pattern was extracted from a solo-dev + coding-agent mobile game where every
