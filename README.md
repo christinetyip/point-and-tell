@@ -21,11 +21,10 @@ npx skills add https://github.com/christinetyip/point-and-tell --skill point-and
 npx skills add https://github.com/christinetyip/point-and-tell --skill point-and-tell -a codex -y
 ```
 
-**Any/most coding agents** (Cursor, Cline, Amp, Windsurf, …) — installs to
-every agent the CLI detects:
+**Any/most coding agents** (Cursor, Cline, Amp, Windsurf, …):
 
 ```bash
-npx skills add https://github.com/christinetyip/point-and-tell --skill point-and-tell -a '*' -y
+npx skills add https://github.com/christinetyip/point-and-tell --skill point-and-tell
 ```
 
 Once installed, your agent applies the pattern when you're building something
