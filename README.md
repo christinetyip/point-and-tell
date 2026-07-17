@@ -59,7 +59,9 @@ One field cut the search space in half before the agent opened a single file.
 ## The loop
 
 1. **Point & tell in the app.** Toggle feedback mode on, tap the thing that's
-   wrong, pick a chip or type a short note. Repeat for everything you spot.
+   wrong, pick a chip or type a short note. The element's identity, geometry,
+   live view state, and app context are captured automatically along with your
+   comment. Repeat for everything you spot.
 2. **Tell your agent.** Back in the chat window, one sentence: *"I left
    point-and-tell pings."* That's the whole handoff.
 3. **The agent fixes.** It pulls the pings, triages each one into a tracked
