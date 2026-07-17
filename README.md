@@ -1,4 +1,4 @@
-# Point-and-Tell
+# Point-and-Tell Skill
 
 *A Spatial Feedback Layer for Coding Agents - an installable agent skill*
 
