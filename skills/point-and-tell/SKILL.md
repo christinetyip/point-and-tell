@@ -3,7 +3,7 @@ name: point-and-tell
 description: Add a dev-only, in-app "point at what's wrong" feedback mode to a visual or spatial app. The user taps the broken element, the app captures its identity, geometry, and live view state as a JSON ping, and the agent reads pings back to fix bugs without reproduction guesswork. Use when the user is building something interactive with visual/spatial feedback (a game, editor, map, dashboard, AR/VR scene) and wants a feedback mode, playtest feedback tool, or in-app bug reporting, or says "point and tell".
 metadata:
   author: christinetyip
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Point-and-Tell
@@ -109,7 +109,8 @@ pinging.
 Never trust the client: validate on the trusted side before storage. Reference
 caps (adopt as defaults): note ≤ 300 chars, snapshot depth ≤ 4, ≤ 250 total
 keys, ≤ 200 chars per string value, per-user rate limit, per-session ping cap
-(400). Reject with a logged reason. Also **log every accepted ping as one JSON
+(400). Reject with a reason the client gets back and the store keeps — see
+*No silent drops* below. Also **log every accepted ping as one JSON
 console line** — the log is a free second transport, visible in device logs
 during live testing.
 
@@ -127,6 +128,28 @@ dump one) and verify you can run it. Platform mappings, if useful: web =
 overlay div + `elementFromPoint`, POST to a JSONL endpoint; mobile = overlay
 view + hit test; game engine = GUI hit test + scene raycast, platform data
 store.
+
+### No silent drops (cross-cutting)
+
+Every drop path in the pipeline above will eventually eat real feedback, and
+only the tester is positioned to notice in time. Paid-for lesson: a build
+whose rejects only warned to the server console lost several reports without
+a trace — and because a rejected-only session never flushed, the evidence of
+the drop was itself dropped.
+
+- **Receipt on every send.** Show a status next to the PnT toggle:
+  `sending…` → `✓ feedback saved`, or `⚠ not saved: <reason>` quoting the
+  trusted side's exact rejection reason (keep it visible until the next
+  send), or `⚠ no reply — feedback may be lost` after a few seconds of
+  silence. This requires the sanitizer to *return* its reason to the client,
+  not just log it.
+- **Rejections are data.** Store rejected pings in the session record with
+  their reason and raw payload, and flush a session even when every ping in
+  it was rejected — the reject you throw away is exactly the one you'll
+  later need to debug.
+- **Local swallows say so.** Client-side guards that eat a tap (an
+  anti-double-tap window, an empty-note check) must say why nothing was sent
+  instead of looking like a successful send.
 
 ## 2. The ping contract
 
@@ -200,6 +223,9 @@ this loop — add it to CLAUDE.md / AGENTS.md / equivalent:
 - [ ] Stored pings carry the build version.
 - [ ] Sanitizer caps + rate limit enforced; accepted pings echoed to console
       as JSON lines.
+- [ ] No silent drops: every send shows an on-screen receipt; force one
+      rejection (e.g. an over-cap note) and verify its reason appears both
+      on screen and in the stored session.
 - [ ] Read-back script exists and you have successfully run it.
 - [ ] Triage ritual + ledger file added to the project's agent instructions,
       including the on-demand trigger ("user says they left pings" → read back
